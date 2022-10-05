@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "518425989427",
+    "project_id": "geoband-66aaa",
+    "storage_bucket": "geoband-66aaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518425989427:android:0a23276e51e34d9b0dae46",
+        "android_client_info": {
+          "package_name": "com.example.test1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518425989427-01a9oi0fhcsfent58e1a7s14b8ud5n8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC03-QbVY5b-MBOtWOdEphfOMDm_hDoZy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518425989427-01a9oi0fhcsfent58e1a7s14b8ud5n8p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
