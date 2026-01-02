@@ -204,7 +204,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                       ),
                     ),
-                    FlatButton(
+                    TextButton(
                       onPressed: (){
                         Navigator.pushReplacement(
                             context, MaterialPageRoute(builder: (_) => Forgotpassword()));
@@ -219,22 +219,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       width: 250,
                       decoration: BoxDecoration(
                           color: Colors.black, borderRadius: BorderRadius.circular(20)),
-                      child: FlatButton(
+                      child: TextButton(
                         onPressed: () async {
                           try{
                             await _auth.signInWithEmailAndPassword(
                                 email: email, password: password);
 
+                            await Navigator.push(
+                                context, MaterialPageRoute(builder: (_) => BottomNavScreen()));
                           }
                           on FirebaseAuthException catch (e){
-
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text(e.message ?? 'Login failed')),
+                            );
                           }
-
-
-
-
-                        await  Navigator.push(
-                              context, MaterialPageRoute(builder: (_) => BottomNavScreen()));
                         },
                         child: Text(
                           'Login',
