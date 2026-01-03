@@ -166,8 +166,19 @@ class _locationhistory extends State<locationhistory> {
                           usersRef.update({
                             'users_location/address' : address as String,
                             'users_location/time' : formattedDate,
-                          }).catchError((error)=> print('You get an error! $error'));
-                          print('User Added!');
+                          }).then((_) {
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text('Location updated!')),
+                              );
+                            }
+                          }).catchError((error) {
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('Error: $error')),
+                              );
+                            }
+                          });
                         });
                       });
                     });

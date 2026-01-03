@@ -146,17 +146,28 @@ class _RegistrationScreen extends State<RegistrationScreen> {
                         children: [
                           ElevatedButton(
                             onPressed:() async {
-                             await usersRef.update({
-                             'users_id/username' : usernameController.text,
-                             'users_id/ic' : icController.text,
-                             'users_id/phone': phoneController.text,
-                             'users_id/state': stateController.text,
-                             'users_id/district': districtController.text,
-                             }).catchError((error)=> print('You get an error! $error'));
-                             print('User Added!');
-                             await Navigator.pushReplacement(
-                                 context, MaterialPageRoute(builder: (_) => BottomNavScreen()));
-
+                             try {
+                               await usersRef.update({
+                                 'users_id/username' : usernameController.text,
+                                 'users_id/ic' : icController.text,
+                                 'users_id/phone': phoneController.text,
+                                 'users_id/state': stateController.text,
+                                 'users_id/district': districtController.text,
+                               });
+                               if (mounted) {
+                                 ScaffoldMessenger.of(context).showSnackBar(
+                                   const SnackBar(content: Text('User Added!')),
+                                 );
+                                 await Navigator.pushReplacement(
+                                     context, MaterialPageRoute(builder: (_) => BottomNavScreen()));
+                               }
+                             } catch (error) {
+                               if (mounted) {
+                                 ScaffoldMessenger.of(context).showSnackBar(
+                                   SnackBar(content: Text('Error: $error')),
+                                 );
+                               }
+                             }
                           },
                             child: Text(
                               'Submit',
