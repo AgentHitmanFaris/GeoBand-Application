@@ -71,12 +71,24 @@ class _addDependent extends State<addDependent> {
                                   color: Colors.cyanAccent,
                                   child: Text("Add!"),
                                   onPressed: () async {
-                                    await usersRef.update({
-                                      'users_dependent/name' : DependentNameController.text,
-                                      'users_dependent/class' : DependentClassController.text,
-                                    }).catchError((error)=> print('You get an error! $error'));
-                                    print('User Added!');
+                                    try {
+                                      await usersRef.update({
+                                        'users_dependent/name' : DependentNameController.text,
+                                        'users_dependent/class' : DependentClassController.text,
+                                      });
+                                      if (mounted) {
+                                        ScaffoldMessenger.of(context).showSnackBar(
+                                          const SnackBar(content: Text('User Added!')),
+                                        );
                                         Navigator.pop(context);
+                                      }
+                                    } catch (error) {
+                                      if (mounted) {
+                                        ScaffoldMessenger.of(context).showSnackBar(
+                                          SnackBar(content: Text('Error: $error')),
+                                        );
+                                      }
+                                    }
                                   },
                                 ),
                               )

@@ -26,8 +26,12 @@ class AddUser extends StatelessWidget {
         'state': state,
         'district': district,
       })
-          .then((value) => print("User Added"))
-          .catchError((error) => print("Failed to add user: $error"));
+          .then((value) => ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('User Added')),
+              ))
+          .catchError((error) => ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Failed to add user: $error')),
+              ));
     }
 
     return TextButton(
