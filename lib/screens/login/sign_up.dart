@@ -207,17 +207,23 @@ final _auth = FirebaseAuth.instance;
                           color: Colors.black, borderRadius: BorderRadius.circular(20)),
                       child: FlatButton(
                         onPressed: () async {
-                          try{
+                          try {
                             await _auth.createUserWithEmailAndPassword(
                                 email: email, password: password);
 
+                            if (!mounted) return;
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => RegistrationScreen()));
+                          } on FirebaseAuthException catch (e) {
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                    content: Text(e.message ?? 'Registration failed')),
+                              );
+                            }
                           }
-                          on FirebaseAuthException catch (e){
-
-                          }
-
-                          Navigator.push(
-                              context, MaterialPageRoute(builder: (_) => RegistrationScreen()));
                         },
                         child: Text(
                           'Register',
