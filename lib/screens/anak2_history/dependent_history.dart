@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test1/screens/anak2_history/addding%20dependent%20user.dart';
+import 'package:test1/screens/anak2_history/adding_dependent_user.dart';
 
 class dependenthistory extends StatefulWidget {
   @override
