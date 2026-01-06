@@ -13,15 +13,12 @@ class Result extends StatelessWidget {
 
     if (resultScore == 10) {
       resultText = 'You Are High Risk User!';
-      print(resultScore);
     } else if (resultScore <= 9 && resultScore >= 6) {
       resultText = 'You Are Medium Risk User!';
-      print(resultScore);
     } else if (resultScore <= 5) {
       resultText = 'You Are Low Risk User!';
     } else {
       resultText = 'Invalid!';
-      print(resultScore);
     }
     return resultText;
   }

@@ -221,17 +221,19 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.black, borderRadius: BorderRadius.circular(20)),
                       child: TextButton(
                         onPressed: () async {
-                          try{
+                          try {
                             await _auth.signInWithEmailAndPassword(
                                 email: email, password: password);
 
-                            await Navigator.push(
-                                context, MaterialPageRoute(builder: (_) => BottomNavScreen()));
-                          }
-                          on FirebaseAuthException catch (e){
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text(e.message ?? 'Login failed')),
-                            );
+                            if (!mounted) return;
+                            await Navigator.push(context,
+                                MaterialPageRoute(builder: (_) => BottomNavScreen()));
+                          } on FirebaseAuthException catch (e) {
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(e.message ?? 'Login failed')),
+                              );
+                            }
                           }
                         },
                         child: Text(

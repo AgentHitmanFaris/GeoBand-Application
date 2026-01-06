@@ -83,12 +83,6 @@ class _SRAScreen extends State<SRAScreen> {
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
-    print(_questionIndex);
-    if (_questionIndex < _questions.length) {
-      print('We have more questions!');
-    } else {
-      print('No more questions!');
-    }
   }
 
   @override
