@@ -29,7 +29,7 @@ class _addDependent extends State<addDependent> {
         title: Text("Dependent Management"),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             showDialog(
                 context: context,
@@ -67,8 +67,8 @@ class _addDependent extends State<addDependent> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: RaisedButton(
-                                  color: Colors.cyanAccent,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(primary: Colors.cyanAccent),
                                   child: Text("Add!"),
                                   onPressed: () async {
                                     try {

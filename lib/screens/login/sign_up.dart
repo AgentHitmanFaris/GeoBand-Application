@@ -205,7 +205,7 @@ final _auth = FirebaseAuth.instance;
                       width: 250,
                       decoration: BoxDecoration(
                           color: Colors.black, borderRadius: BorderRadius.circular(20)),
-                      child: FlatButton(
+                      child: TextButton(
                         onPressed: () async {
                           try {
                             await _auth.createUserWithEmailAndPassword(
