@@ -39,18 +39,18 @@ class Result extends StatelessWidget {
           //        style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
           //        textAlign: TextAlign.center,
           //      ), //Text
-          FlatButton(
+          TextButton(
             child: Text(
               'Back To Main Menu',
+              style: TextStyle(color: Colors.black),
             ), //Text
-            textColor: Colors.black,
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => BottomNavScreen()),
               );
             },
-          ), //FlatButton
+          ), //TextButton
         ], //<Widget>[]
       ), //Column
     ); //Center
