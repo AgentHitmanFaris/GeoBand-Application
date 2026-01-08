@@ -181,14 +181,14 @@ class _distancelocation extends State<distancelocation> {
           Container(
             child:Align(
               alignment: Alignment.bottomCenter,
-              child: ButtonTheme(
-                buttonColor: Colors.white,
-                child: RaisedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Icon(Icons.replay, color: Colors.black,),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
                 ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Icon(Icons.replay, color: Colors.black,),
               ),
             ),
           ),

@@ -158,7 +158,7 @@ class _Forgotpassword extends State<Forgotpassword> {
                         ),
                       ),
                     ),
-                    FlatButton(
+                    TextButton(
                       onPressed: (){
                         Navigator.pushReplacement(
                             context, MaterialPageRoute(builder: (_) => LoginScreen()));                      },
@@ -175,7 +175,7 @@ class _Forgotpassword extends State<Forgotpassword> {
                       width: 250,
                       decoration: BoxDecoration(
                           color: Colors.black, borderRadius: BorderRadius.circular(20)),
-                      child: FlatButton(
+                      child: TextButton(
                         onPressed: () {
                           Navigator.push(
                               context, MaterialPageRoute(builder: (_) => LoginScreen()));
