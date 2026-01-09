@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test1/screens/login/login_screen.dart';
@@ -11,6 +12,9 @@ class Forgotpassword extends StatefulWidget {
 }
 
 class _Forgotpassword extends State<Forgotpassword> {
+  final _auth = FirebaseAuth.instance;
+  String email = '';
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -156,6 +160,11 @@ class _Forgotpassword extends State<Forgotpassword> {
                           fontSize: 15.0,
                           fontWeight: FontWeight.normal,
                         ),
+                        onChanged: (value) {
+                          setState(() {
+                            email = value.trim();
+                          });
+                        },
                       ),
                     ),
                     TextButton(
@@ -176,9 +185,29 @@ class _Forgotpassword extends State<Forgotpassword> {
                       decoration: BoxDecoration(
                           color: Colors.black, borderRadius: BorderRadius.circular(20)),
                       child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context, MaterialPageRoute(builder: (_) => LoginScreen()));
+                        onPressed: () async {
+                          if (email.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text('Please enter your email')),
+                            );
+                            return;
+                          }
+                          try {
+                            await _auth.sendPasswordResetEmail(email: email);
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('Password reset email sent')),
+                              );
+                              Navigator.pushReplacement(
+                                  context, MaterialPageRoute(builder: (_) => LoginScreen()));
+                            }
+                          } on FirebaseAuthException catch (e) {
+                            if (mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(e.message ?? 'Error sending email')),
+                              );
+                            }
+                          }
                         },
                         child: Text(
                           'Submit',
