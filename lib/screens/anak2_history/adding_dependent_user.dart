@@ -13,8 +13,8 @@ class _addDependent extends State<addDependent> {
   final database= FirebaseDatabase.instance.reference();
   User? user = FirebaseAuth.instance.currentUser;
 
-  TextEditingController DependentNameController = new TextEditingController();
-  TextEditingController DependentClassController = new TextEditingController();
+  TextEditingController DependentNameController = TextEditingController();
+  TextEditingController DependentClassController = TextEditingController();
 
 
   @override
@@ -36,7 +36,7 @@ class _addDependent extends State<addDependent> {
                 builder: (BuildContext context) {
                   return AlertDialog(
                     content: Stack(
-                      overflow: Overflow.visible,
+                      clipBehavior: Clip.none,
                       children: <Widget>[
                         Form(
                           key: _formKey,
