@@ -13,8 +13,8 @@ class _distanceselect  extends State<distanceselect > {
   final database= FirebaseDatabase.instance.reference();
   User? user = FirebaseAuth.instance.currentUser;
 
-  TextEditingController DependentNameController = new TextEditingController();
-  TextEditingController DependentClassController = new TextEditingController();
+  TextEditingController DependentNameController = TextEditingController();
+  TextEditingController DependentClassController = TextEditingController();
   bool _checkbox = false;
   bool _checkbox1 = false;
   bool _checkbox2 = false;
@@ -37,54 +37,58 @@ class _distanceselect  extends State<distanceselect > {
             showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return AlertDialog(
-                    content: Stack(
-                      overflow: Overflow.visible,
-                      children: <Widget>[
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text('User Distance Selection',
-                            style: TextStyle(
-                              fontSize: 20.0,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            ),
-                            CheckboxListTile(
-                              title: Text('1.0 Meter'),
-                              value: _checkbox,
-                              onChanged: (value) {
-                                setState(() {
-                                  _checkbox = !_checkbox;
-                                });
-                              },
-                              controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
-                            ),
-                            CheckboxListTile(
-                              title: Text("2.0 Meter"),
-                              value: _checkbox1,
-                              onChanged: (value) {
-                                setState(() {
-                                  _checkbox1 = !_checkbox1;
-                                });
-                              },
-                              controlAffinity: ListTileControlAffinity.leading,
-                            ),
-                            CheckboxListTile(
-                              title: Text('3.0 Meter'),
-                              value: _checkbox2,
-                              onChanged: (value) {
-                                setState(() {
-                                  _checkbox2 = !_checkbox2;
-                                });
-                              },
-                              controlAffinity: ListTileControlAffinity.leading,
+                  return StatefulBuilder(
+                    builder: (context, setState) {
+                      return AlertDialog(
+                        content: Stack(
+                          clipBehavior: Clip.none,
+                          children: <Widget>[
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text('User Distance Selection',
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                ),
+                                CheckboxListTile(
+                                  title: Text('1.0 Meter'),
+                                  value: _checkbox,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      _checkbox = !_checkbox;
+                                    });
+                                  },
+                                  controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
+                                ),
+                                CheckboxListTile(
+                                  title: Text("2.0 Meter"),
+                                  value: _checkbox1,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      _checkbox1 = !_checkbox1;
+                                    });
+                                  },
+                                  controlAffinity: ListTileControlAffinity.leading,
+                                ),
+                                CheckboxListTile(
+                                  title: Text('3.0 Meter'),
+                                  value: _checkbox2,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      _checkbox2 = !_checkbox2;
+                                    });
+                                  },
+                                  controlAffinity: ListTileControlAffinity.leading,
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
-                    ),
+                      );
+                    },
                   );
                 });
           },
