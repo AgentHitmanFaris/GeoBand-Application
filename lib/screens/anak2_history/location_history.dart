@@ -26,7 +26,7 @@ class _locationhistory extends State<locationhistory> {
   static final DateFormat formatter = DateFormat('yyyy-MM-dd');
   final String formatted = formatter.format(now);
 
-  TextEditingController locationController = new TextEditingController();
+  TextEditingController locationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -215,7 +215,7 @@ class _locationhistory extends State<locationhistory> {
   }
 }
 Future<LocationData?> _getLocation() async {
-  Location location = new Location();
+  Location location = Location();
   LocationData _locationData;
 
   bool _serviceEnabled;

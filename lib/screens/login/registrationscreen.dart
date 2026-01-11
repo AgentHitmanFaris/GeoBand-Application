@@ -18,11 +18,11 @@ class _RegistrationScreen extends State<RegistrationScreen> {
 
 
 
-  TextEditingController usernameController = new TextEditingController();
-  TextEditingController icController = new TextEditingController();
-  TextEditingController phoneController = new TextEditingController();
-  TextEditingController stateController = new TextEditingController();
-  TextEditingController districtController = new TextEditingController();
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController icController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController stateController = TextEditingController();
+  TextEditingController districtController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
