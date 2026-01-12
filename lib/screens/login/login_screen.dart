@@ -226,7 +226,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 email: email, password: password);
 
                             if (!mounted) return;
-                            await Navigator.push(context,
+                            await Navigator.pushReplacement(context,
                                 MaterialPageRoute(builder: (_) => BottomNavScreen()));
                           } on FirebaseAuthException catch (e) {
                             if (mounted) {
