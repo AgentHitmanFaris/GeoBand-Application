@@ -154,38 +154,40 @@ class _locationhistory extends State<locationhistory> {
                 SizedBox(
                   height: 20,
                 ),
-                MaterialButton(
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.cyanAccent),
                   onPressed: () async {
-                    _getLocation().then((value) {
-                      LocationData? location = value;
-                      _getAddress(location?.latitude, location?.longitude)
-                          .then((value) {
-                        setState(() {
-                          currentLocation = location;
-                          address = value;
-                          usersRef.update({
-                            'users_location/address' : address as String,
-                            'users_location/time' : formattedDate,
-                          }).then((_) {
-                            if (mounted) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('Location updated!')),
-                              );
-                            }
-                          }).catchError((error) {
-                            if (mounted) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('Error: $error')),
-                              );
-                            }
-                          });
-                        });
+                    try {
+                      LocationData? location = await _getLocation();
+                      if (location == null) return;
+
+                      String newAddress = await _getAddress(location.latitude, location.longitude);
+
+                      if (!mounted) return;
+
+                      setState(() {
+                        currentLocation = location;
+                        address = newAddress;
                       });
-                    });
 
+                      await usersRef.update({
+                        'users_location/address': address,
+                        'users_location/time': formattedDate,
+                      });
 
+                      if (mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Location updated!')),
+                        );
+                      }
+                    } catch (error) {
+                      if (mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Error: $error')),
+                        );
+                      }
+                    }
                   },
-                  color: Colors.cyanAccent,
                   child: Text(
                     "Get Location",
                     style: TextStyle(color: Colors.black),
