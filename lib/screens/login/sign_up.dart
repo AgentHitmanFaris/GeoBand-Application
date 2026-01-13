@@ -212,7 +212,7 @@ final _auth = FirebaseAuth.instance;
                                 email: email, password: password);
 
                             if (!mounted) return;
-                            Navigator.push(
+                            Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (_) => RegistrationScreen()));
