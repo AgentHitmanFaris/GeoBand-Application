@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test1/screens/anak2_history/adding_dependent_user.dart';
 
-class dependenthistory extends StatefulWidget {
+class DependentHistory extends StatefulWidget {
   @override
-  _dependenthistory createState() => _dependenthistory();
+  _DependentHistoryState createState() => _DependentHistoryState();
 }
 
-class _dependenthistory extends State<dependenthistory> {
+class _DependentHistoryState extends State<DependentHistory> {
 
 
   @override
@@ -190,7 +190,7 @@ class _dependenthistory extends State<dependenthistory> {
     onPressed: () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => addDependent()),
+        MaterialPageRoute(builder: (context) => AddDependent()),
       );
     // Add your onPressed code here!
     },

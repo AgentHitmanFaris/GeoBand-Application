@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class distancelocation extends StatefulWidget {
+class DistanceViolation extends StatefulWidget {
   @override
-  _distancelocation createState() => _distancelocation();
+  _DistanceViolationState createState() => _DistanceViolationState();
 }
 
-class _distancelocation extends State<distancelocation> {
+class _DistanceViolationState extends State<DistanceViolation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

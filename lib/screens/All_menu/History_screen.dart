@@ -4,12 +4,12 @@ import 'package:test1/screens/anak2_history/dependent_history.dart';
 import 'package:test1/screens/anak2_history/distance_violation.dart';
 import 'package:test1/screens/anak2_history/location_history.dart';
 
-class historyscreen extends StatefulWidget {
+class HistoryScreen extends StatefulWidget {
   @override
-  _historyscreen createState() => _historyscreen();
+  _HistoryScreenState createState() => _HistoryScreenState();
 }
 
-class _historyscreen extends State<historyscreen> {
+class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,7 +130,7 @@ class _historyscreen extends State<historyscreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => datehistory()),
+                      MaterialPageRoute(builder: (context) => DateHistory()),
                     );
                   },
                   child: SizedBox(
@@ -168,7 +168,7 @@ class _historyscreen extends State<historyscreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => dependenthistory()),
+                          builder: (context) => DependentHistory()),
                     );
                   },
                   child: SizedBox(
@@ -209,7 +209,7 @@ class _historyscreen extends State<historyscreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => locationhistory(title: '',)),
+                          builder: (context) => LocationHistory(title: '',)),
                     );
                   },
                   child: SizedBox(
@@ -246,7 +246,7 @@ class _historyscreen extends State<historyscreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => distancelocation()),
+                          builder: (context) => DistanceViolation()),
                     );
                   },
                   child: SizedBox(
