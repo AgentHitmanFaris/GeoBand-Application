@@ -6,16 +6,16 @@ import 'package:location/location.dart';
 import 'package:geocode/geocode.dart';
 import 'package:intl/intl.dart';
 
-class locationhistory extends StatefulWidget {
-  locationhistory({Key? key, required this.title}) : super(key:key);
+class LocationHistory extends StatefulWidget {
+  LocationHistory({Key? key, required this.title}) : super(key:key);
   late final String title;
 
   @override
-  _locationhistory createState() => _locationhistory();
+  _LocationHistoryState createState() => _LocationHistoryState();
 
 }
 
-class _locationhistory extends State<locationhistory> {
+class _LocationHistoryState extends State<LocationHistory> {
 
   final database= FirebaseDatabase.instance.reference();
   User? user = FirebaseAuth.instance.currentUser;

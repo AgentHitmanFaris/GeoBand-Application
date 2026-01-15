@@ -2,12 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
-class addDependent extends StatefulWidget {
+class AddDependent extends StatefulWidget {
   @override
-  _addDependent createState() => _addDependent();
+  _AddDependentState createState() => _AddDependentState();
 }
 
-class _addDependent extends State<addDependent> {
+class _AddDependentState extends State<AddDependent> {
   final _formKey = GlobalKey<FormState>();
 
   final database= FirebaseDatabase.instance.reference();

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class datehistory extends StatefulWidget {
+class DateHistory extends StatefulWidget {
   @override
-  _datehistory createState() => _datehistory();
+  _DateHistoryState createState() => _DateHistoryState();
 }
 
-class _datehistory extends State<datehistory> {
+class _DateHistoryState extends State<DateHistory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
