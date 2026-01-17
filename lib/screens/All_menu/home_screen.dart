@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test1/config/pallete.dart';
 import 'package:test1/widgets/widgets.dart';
-import 'package:test1/screens/All_menu/distanceselection.dart';
+import 'package:test1/screens/All_menu/distance_selection.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
