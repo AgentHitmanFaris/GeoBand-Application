@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test1/screens/SRA_Result/SRA_result_screen.dart';
-import 'package:test1/screens/Self_Risk_Assessment/SRA_screen.dart';
+import 'package:test1/screens/SRA_Result/sra_result_screen.dart';
+import 'package:test1/screens/Self_Risk_Assessment/sra_screen.dart';
 import 'package:test1/screens/risk_assessment/contact_us.dart';
 import 'package:test1/screens/risk_assessment/hospital_number.dart';
 
@@ -115,7 +115,7 @@ class _StatsScreenState extends State<StatsScreen> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => sraresult()),
+                            MaterialPageRoute(builder: (context) => SraResultScreen()),
                           );
                         },
                         child: Text('Result History',
@@ -184,7 +184,7 @@ class _StatsScreenState extends State<StatsScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => hospitalnumber()),
+                                builder: (context) => HospitalNumber()),
                           );
                         },
                         child: Text('Nearest hospital \n'
@@ -204,7 +204,7 @@ class _StatsScreenState extends State<StatsScreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => contactus()),
+                          MaterialPageRoute(builder: (context) => ContactUs()),
                         );
                       },
                       child: Text('Contact us',

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class hospitalnumber extends StatefulWidget {
+class HospitalNumber extends StatefulWidget {
   @override
-  _hospitalnumber createState() => _hospitalnumber();
+  _HospitalNumberState createState() => _HospitalNumberState();
 }
 
-class _hospitalnumber extends State<hospitalnumber> {
+class _HospitalNumberState extends State<HospitalNumber> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

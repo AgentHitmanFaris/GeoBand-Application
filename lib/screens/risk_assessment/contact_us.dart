@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class contactus extends StatefulWidget {
+class ContactUs extends StatefulWidget {
   @override
-  _contactus createState() => _contactus();
+  _ContactUsState createState() => _ContactUsState();
 }
 
-class _contactus extends State<contactus> {
+class _ContactUsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
