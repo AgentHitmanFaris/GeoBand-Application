@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class sraresult extends StatefulWidget {
+class SraResultScreen extends StatefulWidget {
   @override
-  _sraresult createState() => _sraresult();
+  _SraResultScreenState createState() => _SraResultScreenState();
 }
 
-class _sraresult extends State<sraresult> {
+class _SraResultScreenState extends State<SraResultScreen> {
 
 
   @override

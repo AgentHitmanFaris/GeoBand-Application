@@ -5,10 +5,10 @@ import './result.dart';
 
 class SRAScreen extends StatefulWidget {
   @override
-  _SRAScreen createState() => _SRAScreen();
+  _SraScreenState createState() => _SraScreenState();
 }
 
-class _SRAScreen extends State<SRAScreen> {
+class _SraScreenState extends State<SRAScreen> {
   final _questions = const [
     {
       'questionText':
