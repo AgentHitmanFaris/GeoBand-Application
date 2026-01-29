@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test1/screens/All_menu/screens.dart';
+import 'package:test1/screens/all_menu/screens.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
@@ -56,4 +56,3 @@ class Result extends StatelessWidget {
     ); //Center
   }
 }
-
