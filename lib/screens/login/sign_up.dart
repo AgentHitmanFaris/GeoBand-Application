@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:test1/screens/login/login_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:test1/screens/login/registrationscreen.dart';
+import 'package:test1/screens/login/registration_screen.dart';
 
 
 class Signup extends StatefulWidget {
